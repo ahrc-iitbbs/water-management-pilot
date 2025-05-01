@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  # FastAPI Backend Service
+  backend:
+    image: ${DOCKER_USERNAME}/ahrc-api:${VERSION_TAG:-latest}
+    container_name: ahrc-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    restart: unless-stopped
+    environment:
+      - LOG_LEVEL=INFO
+      - TZ=UTC
+      - CORS_ORIGINS=http://localhost:3000,http://frontend:3000,${DOMAIN:-localhost}
+      - API_ENV=production
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+
+  # Next.js Frontend Service
+  frontend:
+    image: ${DOCKER_USERNAME}/ahrc-ui:${VERSION_TAG:-latest}
+    container_name: ahrc-ui
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
