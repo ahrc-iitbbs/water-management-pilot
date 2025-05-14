@@ -96,3 +96,33 @@
 2025-04-30 17:59:17,622 - INFO - Response e82596aa-0ac3-471d-bea1-217cdf3042f8: Status 200
 2025-04-30 17:59:28,706 - INFO - Request b052ed9f-09c4-4cc3-821a-91d4c83e5786: GET http://backend:8000/logs/records
 2025-04-30 17:59:28,776 - INFO - Response b052ed9f-09c4-4cc3-821a-91d4c83e5786: Status 200
+2025-05-06 22:50:12,821 - INFO - Starting Irrigation Management API in Docker container
+2025-05-06 22:50:12,824 - INFO - LOG_DIR: /app/logs
+2025-05-06 22:50:12,824 - INFO - DATA_DIR: /app/data
+2025-05-06 22:50:12,824 - INFO - Log level: INFO
+2025-05-06 22:51:58,310 - INFO - Starting Irrigation Management API in Docker container
+2025-05-06 22:51:58,312 - INFO - LOG_DIR: /app/logs
+2025-05-06 22:51:58,312 - INFO - DATA_DIR: /app/data
+2025-05-06 22:51:58,312 - INFO - Log level: INFO
+2025-05-09 20:37:41,489 - INFO - Starting Irrigation Management API in Docker container
+2025-05-09 20:37:41,490 - INFO - LOG_DIR: /app/logs
+2025-05-09 20:37:41,491 - INFO - DATA_DIR: /app/data
+2025-05-09 20:37:41,491 - INFO - Log level: INFO
+2025-05-09 20:45:15,333 - INFO - Starting Irrigation Management API in Docker container
+2025-05-09 20:45:15,335 - INFO - LOG_DIR: /app/logs
+2025-05-09 20:45:15,336 - INFO - DATA_DIR: /app/data
+2025-05-09 20:45:15,338 - INFO - Log level: INFO
+2025-05-09 20:45:36,950 - INFO - Request df05ea1b-f444-44b8-8aa3-42747a859b75: GET http://backend:8000/logs/decisions
+2025-05-09 20:45:36,965 - INFO - Response df05ea1b-f444-44b8-8aa3-42747a859b75: Status 200
+2025-05-09 20:45:38,616 - INFO - Request f9786ade-7b41-4f1b-a825-9c8eed46e7fb: GET http://backend:8000/status
+2025-05-09 20:45:38,622 - INFO - Response f9786ade-7b41-4f1b-a825-9c8eed46e7fb: Status 200
+2025-05-09 20:58:35,002 - INFO - Starting Irrigation Management API in Docker container
+2025-05-09 20:58:35,004 - INFO - LOG_DIR: /app/logs
+2025-05-09 20:58:35,005 - INFO - DATA_DIR: /app/data
+2025-05-09 20:58:35,005 - INFO - Log level: INFO
+2025-05-09 20:59:01,400 - INFO - Request 770000b2-1d14-42ec-bc5f-046c96279c3c: GET http://backend:8000/logs/decisions
+2025-05-09 20:59:01,407 - INFO - Response 770000b2-1d14-42ec-bc5f-046c96279c3c: Status 200
+2025-05-09 20:59:02,710 - INFO - Request 17a30df9-89d2-457d-bae7-0bacf68f7e2c: GET http://backend:8000/logs/decisions
+2025-05-09 20:59:02,712 - INFO - Response 17a30df9-89d2-457d-bae7-0bacf68f7e2c: Status 200
+2025-05-09 20:59:04,485 - INFO - Request bc019f54-922a-4464-ae0b-861b36e3e978: GET http://backend:8000/status
+2025-05-09 20:59:04,490 - INFO - Response bc019f54-922a-4464-ae0b-861b36e3e978: Status 200

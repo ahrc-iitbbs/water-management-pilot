@@ -3,53 +3,102 @@
 /**
  * Interface for the irrigation form input data
  */
-export interface IrrigationFormInput {
-    latitude: string;
-    longitude: string;
-    croppedArea: number;
-    cropName: string;
-    sowingDate: string;
-    basePeriod: number;
-    lastIrrigationDate: string;
-    pumpHP: number;
-    pumpDischargeRate: number;
-    pumpType: string;
-    irrigationMethod: string;
+export interface IrrigationInput {
+  latitude: number;
+  longitude: number;
+  croppedArea: number;
+  cropName: string;
+  sowingDate: string;
+  basePeriod: number;
+  lastIrrigationDate: string;
+  pumpHP: number;
+  pumpDischargeRate: number;
+  pumpType: string;
+  irrigationMethod: string;
+}
+
+export interface ProcessedIrrigationData {
+  latitude: number;
+  longitude: number;
+  croppedArea: number;
+  cropName: string;
+  sowingDate: string;
+  basePeriod: number;
+  lastIrrigationDate: string;
+  pumpHP: number;
+  pumpDischargeRate: number;
+  pumpType: string;
+  irrigationMethod: string;
+  turnOnPump: boolean;
+  pumpRunningTime: number;  // Depth of irrigation in mm
+  timestamp: string;
+}
+
+export interface ProcessedFormData {
+  latitude: number;          
+  longitude: number;         
+  croppedArea: number;
+  cropName: string;
+  sowingDate: string;
+  basePeriod: number;
+  lastIrrigationDate: string;
+  pumpHP: number;
+  pumpDischargeRate: number;
+  pumpType: string;
+  irrigationMethod: string;
+  turnOnPump: boolean;
+  pumpRunningTime: number;   // Changed from string to number (depth in mm)
+  timestamp: string;
+  apiData?: { error: string }; // Optional, used for fallback error messages
+}
+
+// Error response type
+export interface ErrorResponse {
+  error: string;
+  detail: string;
+  timestamp: string;
+}
+  export interface CancerDetectionResult {
+    predicted_class: string;
+    // confidence: number;
+    message: string;
+    filename: string;
+    timestamp: string;
+    error: string | null;
   }
   
-  /**
-   * Interface for processed irrigation data returned from the server action
-   * Must match the response structure from the FastAPI backend
-   */
-  export interface ProcessedFormData {
-    /** Input latitude value */
-    latitude: string;
-    /** Input longitude value */
-    longitude: string;
-    /** Cropped area in acres */
-    croppedArea: number;
-    /** Name of the crop */
-    cropName: string;
-    /** Sowing/transplanting date */
-    sowingDate: string;
-    /** Base period of the crop in days */
-    basePeriod: number;
-    /** Last irrigation date */
-    lastIrrigationDate: string;
-    /** Pump horsepower */
-    pumpHP: number;
-    /** Pump discharge rate in liters/minute */
-    pumpDischargeRate: number;
-    /** Type of pump being used */
-    pumpType: string;
-    /** Method of irrigation being used */
-    irrigationMethod: string;
-    /** Decision on whether to turn on the pump */
-    turnOnPump: boolean;
-    /** Recommended pump running time */
-    pumpRunningTime: string;
-    /** Timestamp of when the data was processed */
-    timestamp: string;
-    /** Additional data or error information */
-    apiData: any | { error: string };
+  export interface ValidationInput {
+    file_name: string;
+    current_class: string;
+    new_class: string;
   }
+  
+  export interface StatisticsOutput {
+    benign_predicted: number;
+    benign_validated: number;
+    malignant_predicted: number;
+    malignant_validated: number;
+    suspicious_predicted: number;
+    suspicious_validated: number;
+    total_predicted: number;
+    total_validated: number;
+    accuracy: number;
+  }
+
+
+export interface ChemoFormData {
+  file_number: string;  // Changed from fileNumber to file_number
+  prediction: string;
+  severity: boolean;
+  confidence: number | null;  // To match Optional[float] from FastAPI
+  timestamp: string;
+  apiData?: {
+    error?: string;
+  };
+}
+
+export interface ProcessResult {
+  success: boolean;
+  imageUrl?: string;
+  error?: string;
+}

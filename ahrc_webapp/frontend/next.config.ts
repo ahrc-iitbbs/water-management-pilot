@@ -14,15 +14,15 @@ import type { NextConfig } from 'next';
 
 const nextConfig = {
   devIndicators: false,
-  experimental: {
-    serverActions: true,
-  },
+  // experimental: {
+  //   serverActions: true,
+  // },
   // Make environment variables available to the browser
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://backend:8000',
   },
   // Add output configuration for standalone build
-  output: 'standalone',
+  // output: 'standalone',
 }
 
 module.exports = nextConfig
