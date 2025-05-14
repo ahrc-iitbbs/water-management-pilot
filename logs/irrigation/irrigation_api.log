@@ -1,0 +1,58 @@
+2025-05-09 21:16:31,744 - INFO - Starting Irrigation Management API in Docker container
+2025-05-09 21:16:31,747 - INFO - LOG_DIR: /app/logs
+2025-05-09 21:16:31,749 - INFO - DATA_DIR: /app/data
+2025-05-09 21:16:31,750 - INFO - Log level: INFO
+2025-05-09 21:19:04,705 - INFO - Request 2eb196d6-ce30-4bb4-8bd3-c98db92a2a1b: GET http://localhost:8000/
+2025-05-09 21:19:04,715 - INFO - Response 2eb196d6-ce30-4bb4-8bd3-c98db92a2a1b: Status 404
+2025-05-09 21:19:06,734 - INFO - Request 90fe597b-e472-4b55-bfda-9a684dcd0657: GET http://localhost:8000/docs
+2025-05-09 21:19:06,737 - INFO - Response 90fe597b-e472-4b55-bfda-9a684dcd0657: Status 200
+2025-05-09 21:19:06,842 - INFO - Request cf5176e8-6f59-4d85-948d-61fe9088520e: GET http://localhost:8000/openapi.json
+2025-05-09 21:19:06,873 - INFO - Response cf5176e8-6f59-4d85-948d-61fe9088520e: Status 200
+2025-05-09 21:22:44,625 - INFO - Starting Irrigation Management API in Docker container
+2025-05-09 21:22:44,626 - INFO - LOG_DIR: /app/logs
+2025-05-09 21:22:44,627 - INFO - DATA_DIR: /app/data
+2025-05-09 21:22:44,628 - INFO - Log level: INFO
+2025-05-09 21:24:08,942 - INFO - Request 9cedef00-3896-4439-b831-68e404480027: POST http://irrigation-backend:8000/process
+2025-05-09 21:24:08,950 - INFO - Processing irrigation data for sofa at coordinates (dlfsdf, fsdfsa)
+2025-05-09 21:24:08,966 - INFO - Recommendation: Do NOT turn on pump (last irrigation was 1 days ago)
+2025-05-09 21:24:08,973 - INFO - Response 9cedef00-3896-4439-b831-68e404480027: Status 200
+2025-05-09 21:32:50,143 - INFO - Starting Irrigation Management API in Docker container
+2025-05-09 21:32:50,144 - INFO - LOG_DIR: /app/logs
+2025-05-09 21:32:50,145 - INFO - DATA_DIR: /app/data
+2025-05-09 21:32:50,146 - INFO - Log level: INFO
+2025-05-09 21:35:51,886 - INFO - Starting Irrigation Management API in Docker container
+2025-05-09 21:35:51,887 - INFO - LOG_DIR: /app/logs
+2025-05-09 21:35:51,891 - INFO - DATA_DIR: /app/data
+2025-05-09 21:35:51,897 - INFO - Log level: INFO
+2025-05-10 10:32:39,081 - INFO - Starting Irrigation Management API in Docker container
+2025-05-10 10:32:39,086 - INFO - LOG_DIR: /app/logs
+2025-05-10 10:32:39,093 - INFO - DATA_DIR: /app/data
+2025-05-10 10:32:39,102 - INFO - Log level: INFO
+2025-05-10 10:37:26,570 - INFO - Starting Irrigation Management API in Docker container
+2025-05-10 10:37:26,572 - INFO - LOG_DIR: /app/logs
+2025-05-10 10:37:26,573 - INFO - DATA_DIR: /app/data
+2025-05-10 10:37:26,573 - INFO - Log level: INFO
+2025-05-10 10:51:05,500 - INFO - Starting Irrigation Management API in Docker container
+2025-05-10 10:51:05,500 - INFO - LOG_DIR: /app/logs
+2025-05-10 10:51:05,500 - INFO - DATA_DIR: /app/data
+2025-05-10 10:51:05,501 - INFO - Log level: INFO
+2025-05-10 11:02:47,426 - INFO - Starting Irrigation Management API in Docker container
+2025-05-10 11:02:47,427 - INFO - LOG_DIR: /app/logs
+2025-05-10 11:02:47,427 - INFO - DATA_DIR: /app/data
+2025-05-10 11:02:47,428 - INFO - Log level: INFO
+2025-05-10 11:12:57,640 - INFO - Starting Irrigation Management API in Docker container
+2025-05-10 11:12:57,641 - INFO - LOG_DIR: /app/logs
+2025-05-10 11:12:57,641 - INFO - DATA_DIR: /app/data
+2025-05-10 11:12:57,641 - INFO - Log level: INFO
+2025-05-10 11:24:59,081 - INFO - Starting Irrigation Management API in Docker container
+2025-05-10 11:24:59,082 - INFO - LOG_DIR: /app/logs
+2025-05-10 11:24:59,082 - INFO - DATA_DIR: /app/data
+2025-05-10 11:24:59,083 - INFO - Log level: INFO
+2025-05-10 12:01:01,099 - INFO - Starting Irrigation Management API in Docker container
+2025-05-10 12:01:01,100 - INFO - LOG_DIR: /app/logs
+2025-05-10 12:01:01,100 - INFO - DATA_DIR: /app/data
+2025-05-10 12:01:01,101 - INFO - Log level: INFO
+2025-05-10 18:06:53,271 - INFO - Starting Irrigation Management API in Docker container
+2025-05-10 18:06:53,272 - INFO - LOG_DIR: /app/logs
+2025-05-10 18:06:53,274 - INFO - DATA_DIR: /app/data
+2025-05-10 18:06:53,274 - INFO - Log level: INFO

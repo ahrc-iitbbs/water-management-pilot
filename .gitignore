@@ -1,0 +1,21 @@
+node_modules
+__pycache__.DS_Store
+__pycache__
+.DS_Store
+**/.next/
+**/.DS_Store
+**/__pycache__/
+backend/cervic_cancer/model_iv3.h5
+backend/models/model_iv3.h5
+backend/model/model_iv3.h5# Large model files
+*.h5
+*.hdf5
+backend/model/model_iv3.h5
+backend/cervic_cancer/model_iv3.h5
+backend/**/model_*.h5
+# Large model files
+*.h5
+*.hdf5
+backend/model/model_iv3.h5
+backend/cervic_cancer/model_iv3.h5
+backend/**/model_*.h5

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "c8920d0a-3d85-4ffa-bef0-b82ebaf0c12d",
+    "timestamp": "2025-05-09T21:24:08.966732",
+    "latitude": "dlfsdf",
+    "longitude": "fsdfsa",
+    "cropName": "sofa",
+    "croppedArea": 123.0,
+    "lastIrrigationDate": "2025-05-08",
+    "turnOnPump": false,
+    "pumpRunningTime": "0 hours 0 minutes",
+    "daysSinceIrrigation": 1,
+    "weatherData": {
+      "temperature": 28.5,
+      "humidity": 65,
+      "precipitation_chance": 10,
+      "wind_speed": 5.2
+    },
+    "notes": "Base decision on days since irrigation: 1 days"
+  }
+]
