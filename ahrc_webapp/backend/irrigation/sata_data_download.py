@@ -90,8 +90,8 @@ def main():
     LOGIN_URL = "https://urs.earthdata.nasa.gov/"
  
     # Your login credentials
-    username = "iitbbssj13"
-    password = "Groundwater@89"
+    username = "xxxxxxx"
+    password = "yyyyyyy"
 
     # create session with the user credentials that will be used to authenticate access to the data
     session = SessionWithHeaderRedirection(username, password)
