@@ -14,7 +14,9 @@ export async function createInvoice(formData: FormData): Promise<ProcessedFormDa
     const basePeriod = parseInt(formData.get('basePeriod') as string);
     const lastIrrigationDate = formData.get('lastIrrigationDate') as string;
     const pumpHP = parseFloat(formData.get('pumpHP') as string);
-    const pumpDischargeRate = parseFloat(formData.get('pumpDischargeRate') as string);
+    const wellDepth = parseFloat(formData.get('wellDepth') as string);
+    const wellRadius = parseFloat(formData.get('wellRadius') as string);
+    // const pumpDischargeRate = parseFloat(formData.get('pumpDischargeRate') as string);
     const pumpType = formData.get('pumpType') as string;
     const irrigationMethod = formData.get('irrigationMethod') as string;
     
@@ -33,14 +35,16 @@ export async function createInvoice(formData: FormData): Promise<ProcessedFormDa
       basePeriod,
       lastIrrigationDate,
       pumpHP,
-      pumpDischargeRate,
+      wellDepth,
+      wellRadius,
+      // pumpDischargeRate,
       pumpType,
       irrigationMethod
     };
     
     // Get API URL from environment variable
     // The service name in docker-compose is 'irrigation-backend', not just 'backend'
-    const API_URL = process.env.NEXT_PUBLIC_IRRIGATION_API_URL || 'http://irrigation-backend:8000';
+    const API_URL = process.env.NEXT_PUBLIC_IRRIGATION_API_URL || 'http://127.0.0.1:8000';
     
     console.log(`Connecting to API at: ${API_URL}`);
     
@@ -77,7 +81,7 @@ export async function createInvoice(formData: FormData): Promise<ProcessedFormDa
     // Check if it's a connection error
     if (errorMessage.includes('ECONNREFUSED') || errorMessage.includes('fetch failed')) {
       console.error('Connection refused. Make sure the FastAPI backend is running and accessible.');
-      console.error('Expected URL:', process.env.NEXT_PUBLIC_IRRIGATION_API_URL || 'http://irrigation-backend:8000');
+      console.error('Expected URL:', process.env.NEXT_PUBLIC_IRRIGATION_API_URL || 'http://127.0.0.1:8000');
     }
     
     // Fallback to JavaScript processing if FastAPI call fails

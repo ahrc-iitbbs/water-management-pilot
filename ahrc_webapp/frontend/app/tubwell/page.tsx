@@ -91,6 +91,22 @@ export default function IrrigationForm() {
             type="date" 
             required 
           />
+
+          <FloatingLabelInput
+            id="wellDepth"
+            name="wellDepth"
+            label="Well Depth (m)"
+            type="number"
+            required
+          />
+
+          <FloatingLabelInput
+            id="wellRadius"
+            name="wellRadius"
+            label="Well Radius (m)"
+            type="number"
+            required 
+          />
           
           {/* Pump Information */}
           <FloatingLabelInput 
@@ -101,14 +117,14 @@ export default function IrrigationForm() {
             step="0.1"
             required 
           />
-          <FloatingLabelInput 
+          {/* <FloatingLabelInput 
             id="pumpDischargeRate" 
             name="pumpDischargeRate" 
             label="Pump Discharge Rate (li/min)" 
             type="number" 
             step="0.1"
             required 
-          />
+          /> */}
           
           {/* Dropdown for Pump Type */}
           <div className="relative">
@@ -190,7 +206,7 @@ export default function IrrigationForm() {
                 </div>
                 
                 <div className="flex items-center">
-                  <span className="font-medium w-40">Depth of irrigation:</span>
+                  <span className="font-medium w-40">Current Groundwater Level:</span>
                   <span className="font-bold text-blue-700">
                     {serverOutput.pumpRunningTime} mm
                   </span>
