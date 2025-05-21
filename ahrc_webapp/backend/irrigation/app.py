@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 import json
 import os
 import uuid
+import math
 import rasterio
 from rasterio.errors import RasterioIOError
 import h5py
@@ -47,7 +48,9 @@ class IrrigationInput(BaseModel):
     basePeriod: int = Field(ge=0, description="Base period must be non-negative")
     lastIrrigationDate: str
     pumpHP: float = Field(gt=0, description="Pump HP must be positive")
-    pumpDischargeRate: float = Field(gt=0, description="Pump discharge rate must be positive")
+    wellDepth: float = Field(description="Well depth")
+    wellRadius: float = Field(description="Well radius")
+    # pumpDischargeRate: float = Field(gt=0, description="Pump discharge rate must be positive")
     pumpType: str
     irrigationMethod: str
     
@@ -202,13 +205,34 @@ def calculate_water_requirements(
         # Step 7: Decide irrigation
         irrigation_needed = p <= pa
 
-        return irrigation_needed, round(TAW * pa, 3)
+        return irrigation_needed, round(RAW, 3)
     
     except Exception as e:
         logger.error(f"Error calculating water requirements: {str(e)}")
         raise HTTPException(
             status_code=500,
             detail=f"Error calculating water requirements: {str(e)}"
+        )
+
+
+def calculate_pump_discharge_rate(well_depth: float, predicted_water_level: float, well_radius: float) -> float:
+    try:
+        numerator = 2.72 * (0.5 * well_depth) * (
+        predicted_water_level - (well_depth - (predicted_water_level / 3))
+    )
+        denominator = math.log10(100 - well_radius)
+        
+        if denominator == 0:
+            raise ValueError("Denominator is zero; check that well_radius is not 100.")
+        
+        pump_discharge_rate = numerator / denominator
+        return round(pump_discharge_rate, 3)
+
+    except Exception as e:
+        logger.error(f"Error calculating pump discharge rate: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error calculating pump discharge rate: {str(e)}"
         )
 
 def validate_files_exist():
@@ -356,6 +380,8 @@ async def process_irrigation_data(data: IrrigationInput):
             rzsm_pred * 100, 
             data.cropName
         )
+
+        pump_discharge_rate = calculate_pump_discharge_rate(data.wellDepth, depth, data.wellRadius)
         
         timestamp = datetime.now().isoformat()
         
@@ -369,7 +395,7 @@ async def process_irrigation_data(data: IrrigationInput):
             basePeriod=data.basePeriod,
             lastIrrigationDate=data.lastIrrigationDate,
             pumpHP=data.pumpHP,
-            pumpDischargeRate=data.pumpDischargeRate,
+            pumpDischargeRate=pump_discharge_rate,
             pumpType=data.pumpType,
             irrigationMethod=data.irrigationMethod,
             turnOnPump=decision,
